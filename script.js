@@ -1,6 +1,17 @@
-let number = ''; //String
+let number = ''; // String
+const history = []; // Array to hold results history
 
- // *** May need to convert number sstring to int ***
+/*
+
+    May need to convert number string to int 
+    for each** to iterate
+    
+    give class to button, operators
+
+    dry and abstract, not reating
+
+
+*/
 
 // === Numbers ===
 function nine() {
@@ -92,6 +103,15 @@ function decimal() {
     document.getElementById('input-box').value = number; //Update number string
 }
 
+// Backspace
+function backspace() {
+    number = document.getElementById('input-box').value; // Grab current value
+
+    number = number.slice(0, -1); // Append the last value
+
+    document.getElementById('input-box').value = number; //Update number string
+}
+
 // CE - Clear Entry
 function clearEntry() {
     number = document.getElementById('input-box').value; // Grab current value
@@ -110,3 +130,13 @@ function equal() {
     document.getElementById('input-box').textContent = number;
     console.log(number);
 }
+
+// class calculatorFunction {
+//     constructor(num1, num2, ...args) {
+//         this.num1 = num1;
+//         this.num2 = num2;
+//     }
+
+
+// }
+
