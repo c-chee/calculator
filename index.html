@@ -15,7 +15,7 @@
 
     <main class = 'calculator-container'>
         <!-- Input/ Display -->
-        <input class = 'input-box' placeholder = '0'>
+        <input id = 'input-box' class = 'input-box' type = 'number' min = '0' placeholder = '0'>
 
         <!-- Operations Grid -->
         <section class = 'operations-grid'>
@@ -29,7 +29,7 @@
             <button>&divide;</button> <!-- Divide (/) -->
             <button>7</button> <!-- 7 -->
             <button>8</button> <!-- 8 -->
-            <button>9</button> <!-- 9 -->
+            <button onclick = 'nine()'>9</button> <!-- 9 -->
             <button>&times;</button> <!-- Multiply (x) -->
             <button>4</button> <!-- 4 -->
             <button>5</button> <!-- 5 -->
@@ -42,7 +42,7 @@
             <button>+/-</button> <!-- Negate? (+/-) -->
             <button>0</button> <!-- 0 -->
             <button>.</button> <!-- Decimal (.) -->
-            <button>=</button> <!-- Equal (=) -->
+            <button onclick = 'equal()' >=</button> <!-- Equal (=) -->
         </section>
     </main>
     

@@ -10,8 +10,8 @@
 /* Input Box */
 .input-box {
     grid-column: span 4; /* width 4 column */
-    direction: rtl; /* Type from right */
-    text-align: right; /* Text start fromo right*/
+    direction: left; /* Type from right */
+    text-align: right; /* Text start from right*/
 }
 
 /* Operations Grid Container */
