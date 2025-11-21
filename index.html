@@ -16,17 +16,17 @@
     <main class = 'calculator-container'>
         <!-- Input/ Display -->
         <!-- Type text allows decimals/periods -->
-        <input id = 'input-box' class = 'input-box' type = 'text' placeholder = '0'>
+        <input id = 'input-box' type = 'text' placeholder = '0'>
 
         <!-- Operations Grid -->
         <section class = 'operations-grid'>
-            <button>%</button> <!-- Percent -->
-            <button onclick = 'clearEntry()'>CE</button> <!-- Clear Entry -->
-            <button>C</button> <!-- Clear (all input) -->
-            <button onclick = 'backspace()'>&#x232B;</button> <!-- Backspace -->
-            <button>1/&#119909;</button> <!-- Fraction -->
-            <button>&#119909;&sup2;</button> <!-- Square -->
-            <button>&radic;&#119909;</button> <!-- Square Root -->
+            <button id = 'percent-btn'>%</button> <!-- Percent -->
+            <button id = 'clearentry-btn'>CE</button> <!-- Clear Entry -->
+            <button id = 'clear-btn'>C</button> <!-- Clear (all input) -->
+            <button id = 'back-btn'>&#x232B;</button> <!-- Backspace -->
+            <button id = 'fractiion-btn'>1/&#119909;</button> <!-- Fraction -->
+            <button id = 'squareexpo-btn'>&#119909;&sup2;</button> <!-- Square -->
+            <button id = 'squareroot-btn'>&radic;&#119909;</button> <!-- Square Root -->
             <button class = 'operation-btn' value = '÷'>&divide;</button> <!-- Divide (/) -->
             <button class = 'num-btn' value = '7'>7</button> <!-- 7 -->
             <button class = 'num-btn' value = '8'>8</button> <!-- 8 -->
@@ -41,9 +41,9 @@
             <button class = 'num-btn' value = '3'>3</button> <!-- 3 -->
             <button class = 'operation-btn' value = '+'>+</button> <!-- Add (+) -->
             <button>+/-</button> <!-- Negate? (+/-) -->
-            <button class = 'num-btn' value = '7'>0</button> <!-- 0 -->
-            <button onclick = 'decimal()'>.</button> <!-- Decimal (.) -->
-            <button onclick = 'equal()'>=</button> <!-- Equal (=) -->
+            <button class = 'num-btn' value = '0'>0</button> <!-- 0 -->
+            <button class = 'num-btn' value = '.'>.</button> <!-- Decimal (.) -->
+            <button id = 'equal-btn'>=</button> <!-- Equal (=) -->
         </section>
     </main>
     

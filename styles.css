@@ -2,20 +2,8 @@
 
 .calculator-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     justify-content: center;
     align-items: center;
-    width: 250px;
-}
-
-/* Input Box */
-.input-box {
-    grid-column: span 4; /* width 4 column */
-    direction: left; /* Type from right */
-    text-align: right; /* Text start from right*/
-}
-
-/* Operations Grid Container */
-.operations-grid {
-    display: contents; /* buttons follow parent grid */
+    /* width: 250px; */
 }
