@@ -68,19 +68,19 @@ class Calculator {
             switch (this.operator) {
                 // Add
                 case '+': 
-                    answer = a + b; 
+                    answer = parseFloat(a + b); 
                     break;
                 // Subtract
                 case '-': 
-                    answer = a - b; 
+                    answer = parseFloat(a - b); 
                     break;
                 // Multiply
                 case 'x': 
-                    answer = a * b; 
+                    answer = parseFloat(a * b); 
                     break;
                 // Divide
                 case '÷':
-                    answer = a / b; 
+                    answer = parseFloat(a / b); 
                     break;
             }
         }
@@ -91,19 +91,19 @@ class Calculator {
             switch (this.operator) {
                 // Add
                 case '+': 
-                    answer = a + a; 
+                    answer = parseFloat(a + a); 
                     break;
                 // Subtract
                 case '-': 
-                    answer = a - a; 
+                    answer = parseFloat(a - a); 
                     break;
                 // Multiply
                 case 'x': 
-                    answer = a * a; 
+                    answer = parseFloat(a * a); 
                     break;
                 // Divide
                 case '÷':
-                    answer = a / a; 
+                    answer = parseFloat(a / a); 
                     break;
             }
         }
