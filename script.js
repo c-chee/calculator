@@ -234,6 +234,33 @@ class Calculator {
         }
     }
 
+    square() {
+        // --- Current Number Handle ---
+        // Checks if current number exists
+        if (this.currentNum) {
+            this.currentNum = this.currentNum * this.currentNum;
+
+            // Update
+            this.displayUpdate();
+            return; // Exit
+        }
+
+        // --- PrevNum and Operator Handle ---
+        // Ignore if operator is the last value
+        if (this.prevNum && this.operator && !this.currentNum) return;
+
+
+        // --- PrevNum and NO Operator Handle ---
+        // If there is a previous number but no operator
+        if (this.prevNum && !this.operator) {
+            this.prevNum = this.prevNum * this.prevNum;
+            
+            // Update
+            this.displayUpdate();
+            return; // Exit
+        }
+    }
+
 }
 
 
@@ -284,4 +311,9 @@ document.getElementById('toggle-btn').addEventListener('click', () => {
 // Percent Btn
 document.getElementById('percent-btn').addEventListener('click', () => {
     calc.percent();
+});
+
+// Square Btn
+document.getElementById('squareexpo-btn').addEventListener('click', () => {
+    calc.square();
 });
