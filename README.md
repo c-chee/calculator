@@ -17,8 +17,8 @@
 - To launch calculator, open from index.html
 - Strictly input numbers with buttons to perform operations.
 
-## Deploy
-**GitHub Pages**
+## Deployed
+**GitHub Pages:**
 https://c-chee.github.io/calculator/
 
 
