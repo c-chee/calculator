@@ -4,7 +4,7 @@
 
 // === Calculator Class Object ===
 // - Note: Has to be capitalized
-// - Must be uses before event listeners
+// - Must be used before event listeners
 class Calculator {
     // Attributes - Things that make up a calculator
     constructor (inputBox) {
@@ -132,6 +132,13 @@ class Calculator {
         this.displayUpdate('');
     }
 
+    clearentry() { // Clears only the last number
+        this.currentNum = '';
+
+        // Update display with answer
+        this.displayUpdate();
+    }
+
     back() { // Backspace
         // If a number current;y exists, allow backspace to remove the last value
         if (this.currentNum) {
@@ -180,6 +187,11 @@ document.getElementById('equal-btn').addEventListener('click', () => {
 // Clear Btn
 document.getElementById('clear-btn').addEventListener('click', () => {
     calc.clear();
+});
+
+// Clear Entry Btn
+document.getElementById('clearentry-btn').addEventListener('click', () => {
+    calc.clearentry();
 });
 
 // Backspace Btn
