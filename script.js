@@ -125,7 +125,7 @@ class Calculator {
 
     }
 
-    clearentry() { // Clears current display values
+    clear() { // Clears current display values
         this.currentNum = '';
         this.prevNum = '';
         this.operator = '';
@@ -141,6 +141,9 @@ class Calculator {
         else if (this.operator) {
             // Clears operator to remove
             this.operator = '';
+        }
+        else {
+            return
         }
         
         // Update Display
@@ -174,9 +177,9 @@ document.getElementById('equal-btn').addEventListener('click', () => {
 });
 
 
-// Clear Entry Btn
-document.getElementById('clearentry-btn').addEventListener('click', () => {
-    calc.clearentry();
+// Clear Btn
+document.getElementById('clear-btn').addEventListener('click', () => {
+    calc.clear();
 });
 
 // Backspace Btn
