@@ -6,7 +6,7 @@ body {
     align-items: center;
     height: 100vh;
     overflow: hidden;
-    background-image: url('../Images/rotom_face.jpg');
+    background-image: url('../Images/pixel_bg.jpg');
     background-color: #79c9f8;
     background-size: cover;
     background-position: 80% 100%; /* Horrizontal Vertical*/
