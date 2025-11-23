@@ -1,7 +1,7 @@
 # Pokemon Themed Calculator
 **Disclaimer:** This project is for educational purposes.
 
-**Features**
+**Features:**
 - Addition (+)
 - Subtract (-)
 - Multiply (×)
