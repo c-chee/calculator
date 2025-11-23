@@ -234,7 +234,7 @@ class Calculator {
         }
     }
 
-    square() {
+    square() { // Squares itself
         // --- Current Number Handle ---
         // Checks if current number exists
         if (this.currentNum) {
@@ -254,6 +254,33 @@ class Calculator {
         // If there is a previous number but no operator
         if (this.prevNum && !this.operator) {
             this.prevNum = this.prevNum * this.prevNum;
+            
+            // Update
+            this.displayUpdate();
+            return; // Exit
+        }
+    }
+
+    fraction() { // Convert number to a fraction. 1/Number
+        // --- Current Number Handle ---
+        // Checks if current number exists
+        if (this.currentNum) {
+            this.currentNum = 1 / this.currentNum;
+
+            // Update
+            this.displayUpdate();
+            return; // Exit
+        }
+
+        // --- PrevNum and Operator Handle ---
+        // Ignore if operator is the last value
+        if (this.prevNum && this.operator && !this.currentNum) return;
+
+
+        // --- PrevNum and NO Operator Handle ---
+        // If there is a previous number but no operator
+        if (this.prevNum && !this.operator) {
+            this.prevNum = 1 / this.prevNum;
             
             // Update
             this.displayUpdate();
@@ -316,4 +343,9 @@ document.getElementById('percent-btn').addEventListener('click', () => {
 // Square Btn
 document.getElementById('squareexpo-btn').addEventListener('click', () => {
     calc.square();
+});
+
+// Fraction Btn
+document.getElementById('fractiion-btn').addEventListener('click', () => {
+    calc.fraction();
 });
