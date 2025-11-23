@@ -207,6 +207,33 @@ class Calculator {
 
     }
 
+    percent() { // Converts number to a percent value. Nubmer/100
+        // --- Current Number Handle ---
+        // Checks if current number exists
+        if (this.currentNum) {
+            this.currentNum = this.currentNum / 100;
+
+            // Update
+            this.displayUpdate();
+            return; // Exit
+        }
+
+        // --- PrevNum and Operator Handle ---
+        // Ignore if operator is the last value
+        if (this.prevNum && this.operator && !this.currentNum) return;
+
+
+        // --- PrevNum and NO Operator Handle ---
+        // If there is a previous number but no operator
+        if (this.prevNum && !this.operator) {
+            this.prevNum = this.prevNum / 100;
+            
+            // Update
+            this.displayUpdate();
+            return; // Exit
+        }
+    }
+
 }
 
 
@@ -252,4 +279,9 @@ document.getElementById('back-btn').addEventListener('click', () => {
 // Toggle Btn
 document.getElementById('toggle-btn').addEventListener('click', () => {
     calc.toggle();
+});
+
+// Percent Btn
+document.getElementById('percent-btn').addEventListener('click', () => {
+    calc.percent();
 });
