@@ -288,6 +288,33 @@ class Calculator {
         }
     }
 
+    squareRoot() { // square rootss the current number
+        // --- Current Number Handle ---
+        // Checks if current number exists
+        if (this.currentNum) {
+            this.currentNum = Math.sqrt(this.currentNum);
+
+            // Update
+            this.displayUpdate();
+            return; // Exit
+        }
+
+        // --- PrevNum and Operator Handle ---
+        // Ignore if operator is the last value
+        if (this.prevNum && this.operator && !this.currentNum) return;
+
+
+        // --- PrevNum and NO Operator Handle ---
+        // If there is a previous number but no operator
+        if (this.prevNum && !this.operator) {
+            this.prevNum = Math.sqrt(this.prevNum);
+            
+            // Update
+            this.displayUpdate();
+            return; // Exit
+        }
+    }
+
 }
 
 
@@ -348,4 +375,9 @@ document.getElementById('squareexpo-btn').addEventListener('click', () => {
 // Fraction Btn
 document.getElementById('fractiion-btn').addEventListener('click', () => {
     calc.fraction();
+});
+
+// Square Root Btn
+document.getElementById('squareroot-btn').addEventListener('click', () => {
+    calc.squareRoot();
 });
