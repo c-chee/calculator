@@ -32,9 +32,11 @@ body {
 
 .calculator-container .input-box{
     margin: 0.2em;
+    padding: 0em 1em;
     height: 2em;
     font-size: 1.25em;
     box-shadow: -2px -2px 2px #a45d5a;
+    box-sizing: border-box;
 }
 
 .operations-grid {

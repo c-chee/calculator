@@ -157,6 +157,56 @@ class Calculator {
         this.displayUpdate();
     }
 
+    toggle() { // Toggles value to be either positive or negative
+        // --- Current Number Handle ---
+        // Checks if current number exists
+        if (this.currentNum) {
+            // Checks if theress already a (-), yes, remove
+            if (this.currentNum.startsWith('-')) {
+                this.currentNum = this.currentNum.slice(1);
+            }
+            // Else, no, add (-)
+            else {
+                this.currentNum = ('-') + this.currentNum;
+            }
+
+            // Update
+            this.displayUpdate();
+            return; // Exit
+        }
+
+        // --- PrevNum and Operator Handle ---
+        // Ignore if operator is the last value
+        if (this.prevNum && this.operator && !this.currentNum) return;
+
+
+        // --- PrevNum and NO Operator Handle ---
+        // If there is a previous number but no operator
+        if (this.prevNum && !this.operator) {
+
+            // Fix: Allows the user to flip the sign of answer
+            // Reasoning: Answer becomes a value so it no longer read as a string to locate (-)
+            let prevPlaceholder = this.prevNum.toString();
+
+            // If there is (-) remove
+            if (prevPlaceholder.startsWith('-')) {
+                prevPlaceholder = prevPlaceholder.slice(1);
+            }
+            // Else add (-)
+            else {
+                prevPlaceholder = '-' + prevPlaceholder;
+            }
+
+            // Update prevNum
+            this.prevNum = prevPlaceholder;
+
+            // Update
+            this.displayUpdate();
+            return; // Exit
+        }
+
+    }
+
 }
 
 
@@ -197,4 +247,9 @@ document.getElementById('clearentry-btn').addEventListener('click', () => {
 // Backspace Btn
 document.getElementById('back-btn').addEventListener('click', () => {
     calc.back();
+});
+
+// Toggle Btn
+document.getElementById('toggle-btn').addEventListener('click', () => {
+    calc.toggle();
 });
