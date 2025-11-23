@@ -30,11 +30,13 @@ class Calculator {
         if (this.operator) return;
 
         // If there isn't a number to operate on 
-        if (!this.currentNum) return;
+        if (!this.currentNum && !this.prevNum) return;
 
         // Store current number to previous, and clear to make space for the second number to become the new current number
-        this.prevNum = this.currentNum;
-        this.currentNum = '';
+        if (this.currentNum) {
+            this.prevNum = this.currentNum;
+            this.currentNum = '';
+        }
 
         // Store selected operator value for later
         this.operator = selectOperator;
@@ -134,6 +136,11 @@ class Calculator {
         // If a number current;y exists, allow backspace to remove the last value
         if (this.currentNum) {
             this.currentNum = this.currentNum.slice(0, -1);
+        }
+        // Else if the last value is an operator ...
+        else if (this.operator) {
+            // Clears operator to remove
+            this.operator = '';
         }
         
         // Update Display
